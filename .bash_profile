@@ -38,4 +38,3 @@ export SCM_CHECK=true
 # Load Bash It
 source $BASH_IT/bash_it.sh
 
-[ -s "/Users/lach/.dnx/dnvm/dnvm.sh" ] && . "/Users/lach/.dnx/dnvm/dnvm.sh" # Load dnvm

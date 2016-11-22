@@ -1,15 +1,3 @@
-
-
-
-alias ll='ls -alF'
-alias lt='ls -lrt'
-
-export WORK=$HOME/dev/
-alias work='cd $WORK'
-alias ho='cd $HOME'
-alias hi='history|grep $1'
-alias pe='ps -ef|grep $1'
-
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/lach/.oh-my-zsh
 
@@ -103,4 +91,3 @@ alias work='cd $WORK'
 alias ho='cd $HOME'
 alias hi='history|grep $1'
 alias pe='ps -ef|grep $1'
-[ -s "/Users/lach/.dnx/dnvm/dnvm.sh" ] && . "/Users/lach/.dnx/dnvm/dnvm.sh" # Load dnvm
