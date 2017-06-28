@@ -80,7 +80,9 @@
 
     ag
 
-    neotree))
+    neotree
+
+    sayid))
 
 ;; On OS X, an Emacs instance started from the graphical user
 ;; interface will have a different environment than a shell in a
@@ -185,3 +187,5 @@ With negative N, comment out original line and use the absolute value."
 (global-set-key [?\C-c ?d] 'duplicate-line-or-region)
 
 (define-key global-map (kbd "RET") 'newline-and-indent)
+(eval-after-load 'clojure-mode
+  '(sayid-setup-package))
