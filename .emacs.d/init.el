@@ -82,7 +82,19 @@
 
     neotree
 
-    sayid))
+    sayid
+
+    ;;go packages
+    go-mode
+;;    exec-path-from-shell
+    auto-complete
+    go-autocomplete
+    flymake-go
+    go-eldoc
+    gorepl-mode
+    gotest
+    go-playground
+    ))
 
 ;; On OS X, an Emacs instance started from the graphical user
 ;; interface will have a different environment than a shell in a
@@ -146,6 +158,9 @@
 ;; Langauage-specific
 (load "setup-clojure.el")
 (load "setup-js.el")
+(load "setup-go.el")
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -162,30 +177,7 @@
  ;; If there is more than one, they won't work right.
  )
 
-(defun duplicate-line-or-region (&optional n)
-  "Duplicate current line, or region if active.
-With argument N, make N copies.
-With negative N, comment out original line and use the absolute value."
-  (interactive "*p")
-  (let ((use-region (use-region-p)))
-    (save-excursion
-      (let ((text (if use-region        ;Get region if active, otherwise line
-                      (buffer-substring (region-beginning) (region-end))
-                    (prog1 (thing-at-point 'line)
-                      (end-of-line)
-                      (if (< 0 (forward-line 1)) ;Go to beginning of next line, or make a new one
-                          (newline))))))
-        (dotimes (i (abs (or n 1)))     ;Insert N times, or once if not specified
-          (insert text))))
-    (if use-region nil                  ;Only if we're working with a line (not a region)
-      (let ((pos (- (point) (line-beginning-position)))) ;Save column
-        (if (> 0 n)                             ;Comment out original with negative arg
-            (comment-region (line-beginning-position) (line-end-position)))
-        (forward-line 1)
-        (forward-char pos)))))
-
-(global-set-key [?\C-c ?d] 'duplicate-line-or-region)
-
-(define-key global-map (kbd "RET") 'newline-and-indent)
 (eval-after-load 'clojure-mode
   '(sayid-setup-package))
+
+(tool-bar-mode -1)
