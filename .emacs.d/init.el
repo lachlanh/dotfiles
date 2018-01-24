@@ -68,7 +68,7 @@
 
     ;; project navigation
     projectile
-
+    flx-ido
     ;; colorful parenthesis matching
     rainbow-delimiters
 
@@ -82,6 +82,8 @@
 
     neotree
 
+    browse-kill-ring
+    
     sayid
 
     ;;go packages
@@ -94,6 +96,9 @@
     gorepl-mode
     gotest
     go-playground
+    go-rename
+
+    floobits
     ))
 
 ;; On OS X, an Emacs instance started from the graphical user
@@ -167,6 +172,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(coffee-tab-width 2)
+ '(custom-safe-themes
+   (quote
+    ("9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" "7f1263c969f04a8e58f9441f4ba4d7fb1302243355cb9faecb55aec878a06ee9" "1157a4055504672be1df1232bed784ba575c60ab44d8e6c7b3800ae76b42f8bd" "cf08ae4c26cacce2eebff39d129ea0a21c9d7bf70ea9b945588c1c66392578d1" "5ee12d8250b0952deefc88814cf0672327d7ee70b16344372db9460e9a0e3ffc" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" default)))
  '(package-selected-packages
    (quote
     (neotree tagedit smex rainbow-delimiters projectile paredit magit ido-ubiquitous exec-path-from-shell clojure-mode-extra-font-locking cider))))
@@ -181,3 +189,11 @@
   '(sayid-setup-package))
 
 (tool-bar-mode -1)
+
+;; flx-ido config
+(ido-mode 1)
+(ido-everywhere 1)
+(flx-ido-mode 1)
+(setq ido-enable-flex-matching t)
+(setq ido-use-faces nil)
+(browse-kill-ring-default-keybindings)

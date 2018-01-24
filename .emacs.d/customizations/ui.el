@@ -67,3 +67,5 @@
 
 ;; no bell
 (setq ring-bell-function 'ignore)
+;; for mac release escape key
+(global-unset-key (kbd "ESC ESC ESC"))
