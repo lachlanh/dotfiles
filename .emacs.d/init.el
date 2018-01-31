@@ -97,7 +97,7 @@
     gotest
     go-playground
     go-rename
-
+    go-fill-struct
     floobits
     ))
 

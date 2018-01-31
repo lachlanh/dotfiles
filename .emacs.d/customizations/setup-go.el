@@ -14,6 +14,8 @@
   (local-set-key (kbd "M-[") 'previous-error)
   
   (auto-complete-mode 1)
+  (setq ac-auto-show-menu 0.5)
+  (define-key ac-completing-map "\ESC/" 'ac-stop)
   )
 
 (add-hook 'go-mode-hook 'my-go-mode-hook)

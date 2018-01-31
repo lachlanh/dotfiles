@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/lach/.oh-my-zsh
+export ZSH=/Users/lhespe/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -26,7 +26,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -84,18 +84,17 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-DISABLE_AUTO_TITLE=true
-
 alias ll='ls -alF'
 alias lt='ls -lrt'
 
-export WORK=$HOME/dev/ot/
+export WORK=$HOME/dev/
 alias work='cd $WORK'
 alias ho='cd $HOME'
 alias hi='history|grep $1'
 alias pe='ps -ef|grep $1'
 
-PATH=$PATH:~/bin:/usr/local/go/bin
+export GOPATH=/Users/lhespe/go
+PATH=$PATH:~/bin:$GOPATH/bin
 
-export NVM_DIR="/home/lach/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+export SOUS=$GOPATH/src/github.com/opentable/sous
+alias works='cd $SOUS'
