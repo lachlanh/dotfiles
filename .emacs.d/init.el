@@ -94,8 +94,8 @@
     ;;go packages
     go-mode
 ;;    exec-path-from-shell
-    auto-complete
-    go-autocomplete
+    ;auto-complete
+    ;go-autocomplete
     flymake-go
     go-eldoc
     gorepl-mode
@@ -104,6 +104,11 @@
     go-rename
     go-fill-struct
     golint
+    
+    ;;alternate autocomplete mechanism
+    company
+    company-go
+
     floobits
     ))
 
