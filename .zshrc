@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/lhespe/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -87,14 +87,21 @@ source $ZSH/oh-my-zsh.sh
 alias ll='ls -alF'
 alias lt='ls -lrt'
 
-export WORK=$HOME/dev/
+export WORK=$HOME/dev/ot/
 alias work='cd $WORK'
 alias ho='cd $HOME'
 alias hi='history|grep $1'
 alias pe='ps -ef|grep $1'
 
-export GOPATH=/Users/lhespe/go
-PATH=$PATH:~/bin:$GOPATH/bin
+export GOPATH=/home/lach/go
+PATH=$PATH:/usr/local/go/bin:~/bin:$GOPATH/bin
 
 export SOUS=$GOPATH/src/github.com/opentable/sous
 alias works='cd $SOUS'
+
+
+export ALTERNATE_EDITOR=""
+export EDITOR="emacsclient -t"
+export VISUAL="emacsclient -c -a emacs"
+alias ec='emacsclient -t $1'
+alias emacs='emacsclient -c $1'
