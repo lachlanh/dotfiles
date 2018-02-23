@@ -47,14 +47,14 @@
 
     ;; key bindings and code colorization for Clojure
     ;; https://github.com/clojure-emacs/clojure-mode
-    clojure-mode
+;    clojure-mode
 
     ;; extra syntax highlighting for clojure
-    clojure-mode-extra-font-locking
+ ;   clojure-mode-extra-font-locking
 
     ;; integration with a Clojure REPL
     ;; https://github.com/clojure-emacs/cider
-    cider
+  ;  cider
 
     ;; allow ido usage in as many contexts as possible. see
     ;; customizations/navigation.el line 23 for a description
@@ -84,13 +84,13 @@
 
     browse-kill-ring
     
-    sayid
+   ; sayid
 
     ;;go packages
     go-mode
 ;;    exec-path-from-shell
-    auto-complete
-    go-autocomplete
+    ;auto-complete
+    ;go-autocomplete
     flymake-go
     go-eldoc
     gorepl-mode
@@ -98,6 +98,12 @@
     go-playground
     go-rename
     go-fill-struct
+    golint
+    
+    ;;alternate autocomplete mechanism
+    company
+    company-go
+
     floobits
     ))
 
@@ -112,7 +118,7 @@
 (if (eq system-type 'darwin)
     (add-to-list 'my-packages 'exec-path-from-shell))
 
-(dolist (p my-packages)
+(dolist (p my-packages)                 
   (when (not (package-installed-p p))
     (package-install p)))
 
@@ -161,8 +167,8 @@
 (load "elisp-editing.el")
 
 ;; Langauage-specific
-(load "setup-clojure.el")
-(load "setup-js.el")
+;(load "setup-clojure.el")
+;(load "setup-js.el")
 (load "setup-go.el")
 
 
@@ -185,8 +191,8 @@
  ;; If there is more than one, they won't work right.
  )
 
-(eval-after-load 'clojure-mode
-  '(sayid-setup-package))
+;; (eval-after-load 'clojure-mode
+;;   '(sayid-setup-package))
 
 (tool-bar-mode -1)
 
@@ -197,3 +203,7 @@
 (setq ido-enable-flex-matching t)
 (setq ido-use-faces nil)
 (browse-kill-ring-default-keybindings)
+
+;; autosave buffer
+
+;;(add-hook 'focus-out-hook (lambda () (save-some-buffers t)))

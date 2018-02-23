@@ -1,0 +1,18 @@
+((("append" .
+   [1 0 0 0 0 0])
+  ("expectedFields" .
+   [2 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("string" .
+   [1 0 0 0 0 0])
+  ("defaultExpectedFields" .
+   [2 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("Errorf" .
+   [0 1 0 0 0 0])
+  ("nil" .
+   [1 0 0])
+  ("StandardVariableFields" .
+   [0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("unprefixedDeployerFields" .
+   [0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("String" .
+   [2 0 0 0 0 0])))

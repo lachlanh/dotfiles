@@ -12,10 +12,7 @@
   (local-set-key (kbd "M-P") 'recompile)
   (local-set-key (kbd "M-]") 'next-error)
   (local-set-key (kbd "M-[") 'previous-error)
-  
-  (auto-complete-mode 1)
-  (setq ac-auto-show-menu 0.5)
-  (define-key ac-completing-map "\ESC/" 'ac-stop)
+
   )
 
 (add-hook 'go-mode-hook 'my-go-mode-hook)
@@ -23,8 +20,14 @@
 (add-hook 'go-mode-hook 'enable-paredit-mode)
 (add-hook 'go-mode-hook 'gorepl-mode)
 
-(with-eval-after-load 'go-mode
-  (require 'go-autocomplete))
+;; (with-eval-after-load 'go-mode
+;;   (require 'go-autocomplete))
+;; try company for autocomplete
+(add-hook 'go-mode-hook (lambda ()
+                          (company-mode)
+                          (set (make-local-variable 'company-backends) '(company-go))))
+
+
 
 (go-guru-hl-identifier-mode)
 
