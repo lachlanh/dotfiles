@@ -69,3 +69,16 @@
 (setq ring-bell-function 'ignore)
 ;; for mac release escape key
 (global-unset-key (kbd "ESC ESC ESC"))
+
+;(windmove-default-keybindings)
+
+(global-set-key (kbd "C-S-<left>")  'windmove-left)
+(global-set-key (kbd "C-S-<right>") 'windmove-right)
+(global-set-key (kbd "C-S-<up>")    'windmove-up)
+(global-set-key (kbd "C-S-<down>")  'windmove-down)
+;; (global-set-key (kbd "C-.") #'other-window)
+;; (global-set-key (kbd "C-,") #'prev-window)
+
+;; (defun prev-window ()
+;;   (interactive)
+;;   (other-window -1))

@@ -11,6 +11,6 @@
 ;; Go straight to scratch buffer on startup
 (setq inhibit-startup-message t)
 
-(global-set-key [f8] 'neotree-toggle)
+(global-set-key [f6] 'neotree-toggle)
 
 
