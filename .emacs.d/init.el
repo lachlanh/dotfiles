@@ -109,6 +109,9 @@
     company
     company-go
 
+    go-dlv
+
+    
     floobits
     ))
 
