@@ -160,10 +160,14 @@ bar {
 # lock screen
 bindsym $mod+Escape exec i3lock -d -c 000000
 
+bindsym $mod+Shift+Escape exec i3lock && systemctl suspend
+
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+Escape exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 #emacsclient window
 bindsym $mod+Shift+e exec emacsclient -c -n
 
 bindsym $mod+space exec "~/kbswitch.sh"
+
+exec nm-applet
