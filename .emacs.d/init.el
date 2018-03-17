@@ -85,6 +85,10 @@
 
     ag
 
+    rg
+
+    fzf
+    
     neotree
 
     browse-kill-ring
@@ -109,6 +113,9 @@
     company
     company-go
 
+    go-dlv
+
+    
     floobits
     ))
 

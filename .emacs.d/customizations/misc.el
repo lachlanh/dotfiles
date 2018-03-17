@@ -12,5 +12,6 @@
 (setq inhibit-startup-message t)
 
 (global-set-key [f6] 'neotree-toggle)
+(global-set-key [f7] 'fzf)
 
 
