@@ -85,6 +85,10 @@
 
     ag
 
+    rg
+
+    fzf
+    
     neotree
 
     browse-kill-ring
