@@ -98,3 +98,10 @@ With negative N, comment out original line and use the absolute value."
 (global-set-key [?\C-c ?d] 'duplicate-line-or-region)
 
 (define-key global-map (kbd "RET") 'newline-and-indent)
+
+
+(defun save-all ()
+  (interactive)
+  (save-some-buffers t))
+
+(add-hook 'focus-out-hook 'save-all)

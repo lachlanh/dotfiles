@@ -82,3 +82,47 @@
 ;; (defun prev-window ()
 ;;   (interactive)
 ;;   (other-window -1))
+
+;; setup the mouse for running in tmux
+(xterm-mouse-mode 1)
+;; (require 'xt-mouse)
+;; (xterm-mouse-mode)
+;; (require 'mouse)
+;; (xterm-mouse-mode t)
+;; (defun track-mouse (e))
+
+;; (setq mouse-wheel-follow-mouse 't)
+
+;; (defvar alternating-scroll-down-next t)
+;; (defvar alternating-scroll-up-next t)
+
+;; (defun alternating-scroll-down-line ()
+;;   (interactive "@")
+;;     (when alternating-scroll-down-next
+;; ;      (run-hook-with-args 'window-scroll-functions )
+;;       (scroll-down-line))
+;;     (setq alternating-scroll-down-next (not alternating-scroll-down-next)))
+
+;; (defun alternating-scroll-up-line ()
+;;   (interactive "@")
+;;     (when alternating-scroll-up-next
+;; ;      (run-hook-with-args 'window-scroll-functions)
+;;       (scroll-up-line))
+;;     (setq alternating-scroll-up-next (not alternating-scroll-up-next)))
+
+;; (global-set-key (kbd "<mouse-4>") 'alternating-scroll-down-line)
+;; (global-set-key (kbd "<mouse-5>") 'alternating-scroll-up-line)
+
+
+(defadvice switch-to-buffer (before save-buffer-now activate)
+  (when buffer-file-name (save-buffer)))
+(defadvice other-window (before other-window-now activate)
+  (when buffer-file-name (save-buffer)))
+(defadvice windmove-up (before other-window-now activate)
+  (when buffer-file-name (save-buffer)))
+(defadvice windmove-down (before other-window-now activate)
+  (when buffer-file-name (save-buffer)))
+(defadvice windmove-left (before other-window-now activate)
+  (when buffer-file-name (save-buffer)))
+(defadvice windmove-right (before other-window-now activate)
+  (when buffer-file-name (save-buffer)))

@@ -10,15 +10,17 @@
   (local-set-key (kbd "M-.") 'godef-jump)
   (local-set-key (kbd "M-p") 'compile)
   (local-set-key (kbd "M-P") 'recompile)
-  (local-set-key (kbd "M-]") 'next-error)
-  (local-set-key (kbd "M-[") 'previous-error)
+;  (local-set-key (kbd "M-]") 'next-error)
+;  (local-set-key (kbd "M-[") 'previous-error)
 
   )
 
 (add-hook 'go-mode-hook 'my-go-mode-hook)
 (add-hook 'go-mode-hook 'go-eldoc-setup)
-(add-hook 'go-mode-hook 'enable-paredit-mode)
-(add-hook 'go-mode-hook 'gorepl-mode)
+;(add-hook 'go-mode-hook 'enable-paredit-mode)
+;(add-hook 'go-mode-hook 'smartparens-mode)
+;(add-hook 'go-mode-hook 'gorepl-mode)
+(add-hook 'go-mode-hook 'go-guru-hl-identifier-mode)
 
 ;; (with-eval-after-load 'go-mode
 ;;   (require 'go-autocomplete))
@@ -29,7 +31,7 @@
 
 
 
-(go-guru-hl-identifier-mode)
+;(go-guru-hl-identifier-mode)
 
 (add-hook 'projectile-after-switch-project-hook 'go-set-project)
 

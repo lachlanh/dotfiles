@@ -49,7 +49,8 @@
   '(;; makes handling lisp expressions much, much easier
     ;; Cheatsheet: http://www.emacswiki.org/emacs/PareditCheatsheet
     paredit
-
+;    smartparens
+;    smartparens-config
     ;; key bindings and code colorization for Clojure
     ;; https://github.com/clojure-emacs/clojure-mode
     ;; clojure-mode
@@ -100,11 +101,11 @@
 ;;    exec-path-from-shell
     ;auto-complete
     ;go-autocomplete
-    flymake-go
+;    flymake-go
     go-eldoc
-    gorepl-mode
+;    gorepl-mode
     gotest
-    go-playground
+;    go-playground
     go-rename
     go-fill-struct
     golint
@@ -116,7 +117,7 @@
     go-dlv
 
     
-    floobits
+ ;   floobits
     ))
 
 ;; On OS X, an Emacs instance started from the graphical user
