@@ -1,5 +1,6 @@
 (load "go-guru.el")
 (defun my-go-mode-hook ()
+  (setq tab-width 2 indent-tabs-mode 1)
   (add-hook 'before-save-hook 'gofmt-before-save) ; gofmt before every save
   (setq gofmt-command "goimports")
 
@@ -17,6 +18,12 @@
 
 (add-hook 'go-mode-hook 'my-go-mode-hook)
 (add-hook 'go-mode-hook 'go-eldoc-setup)
+
+;; flycheck syntax checker
+(flycheck-gometalinter-setup)
+(setq flycheck-gometalinter-fast t)
+(setq flycheck-gometalinter-test t)
+(add-hook 'go-mode-hook 'flycheck-mode)
 ;(add-hook 'go-mode-hook 'enable-paredit-mode)
 ;(add-hook 'go-mode-hook 'smartparens-mode)
 ;(add-hook 'go-mode-hook 'gorepl-mode)
@@ -35,6 +42,7 @@
 
 (add-hook 'projectile-after-switch-project-hook 'go-set-project)
 
-(add-to-list 'load-path (concat (getenv "GOPATH")  "/src/github.com/golang/lint/misc/emacs"))
-(require 'golint)
-(require 'go-dlv)
+;;(add-to-list 'load-path (concat (getenv "GOPATH")  "/src/github.com/golang/lint/misc/emacs"))
+;;(require 'golint)
+;;(require 'go-dlv)
+

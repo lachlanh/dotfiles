@@ -1,7 +1,7 @@
 ;;;;
 ;; Packages
 ;;;;
-
+ 
 ;; Define package repositories
 (require 'package)
 (add-to-list 'package-archives
@@ -35,9 +35,8 @@
   (server-start))
 
 ;; Define he following variables to remove the compile-log warnings
-;; when defining ido-ubiquitous
-(defvar ido-cur-item nil)
-(defvar ido-default-item nil)
+;; when defining ido-ubiquitousv(defvar ido-cur-item nil)
+(defvar ido-default-item nil) 
 (defvar ido-cur-list nil)
 (defvar predicate nil)
 (defvar inherit-input-method nil)
@@ -116,7 +115,10 @@
 
     go-dlv
 
+    flycheck
+    flycheck-gometalinter
     
+    ace-window
  ;   floobits
     ))
 
@@ -183,7 +185,7 @@
 ;; (load "setup-clojure.el")
 ;; (load "setup-js.el")
 (load "setup-go.el")
-
+;;(add-hook 'after-init-hook #'global-flycheck-mode)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -220,3 +222,6 @@
 ;; autosave buffer
 
 ;;(add-hook 'focus-out-hook (lambda () (save-some-buffers t)))
+
+;; ace window experiment
+(global-set-key (kbd "M-o") 'ace-window)
