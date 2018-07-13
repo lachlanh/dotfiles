@@ -126,3 +126,4 @@
   (when buffer-file-name (save-buffer)))
 (defadvice windmove-right (before other-window-now activate)
   (when buffer-file-name (save-buffer)))
+

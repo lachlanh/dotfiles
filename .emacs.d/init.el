@@ -1,7 +1,7 @@
 ;;;;
 ;; Packages
 ;;;;
- 
+(add) 
 ;; Define package repositories
 (require 'package)
 (add-to-list 'package-archives
@@ -119,6 +119,11 @@
     flycheck-gometalinter
     
     ace-window
+
+    avy
+
+    yasnippet
+    yasnippet-snippets
  ;   floobits
     ))
 
@@ -225,3 +230,6 @@
 
 ;; ace window experiment
 (global-set-key (kbd "M-o") 'ace-window)
+(global-set-key (kbd "M-s") 'avy-goto-char)
+
+(yas-global-mode 1)
