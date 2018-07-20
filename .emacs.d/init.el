@@ -230,6 +230,8 @@
 
 ;; ace window experiment
 (global-set-key (kbd "M-o") 'ace-window)
-(global-set-key (kbd "M-s") 'avy-goto-char)
+(global-set-key (kbd "M-s") 'avy-goto-char-2)
+(setq avy-keys '(?a ?r ?s ?t ?d ?h ?n ?e ?i ?o))
+
 
 (yas-global-mode 1)
