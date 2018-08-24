@@ -46,9 +46,8 @@
 (defvar my-packages
   '(;; makes handling lisp expressions much, much easier
     ;; Cheatsheet: http://www.emacswiki.org/emacs/PareditCheatsheet
-    paredit
-;    smartparens
-;    smartparens-config
+;    paredit
+    smartparens
     ;; key bindings and code colorization for Clojure
     ;; https://github.com/clojure-emacs/clojure-mode
     ;; clojure-mode
@@ -183,13 +182,15 @@
 (load "misc.el")
 
 ;; For editing lisps
-(load "elisp-editing.el")
+;(load "elisp-editing.el")
 
 ;; Langauage-specific
 ;; (load "setup-clojure.el")
 ;; (load "setup-js.el")
 (load "setup-go.el")
 ;;(add-hook 'after-init-hook #'global-flycheck-mode)
+
+(load "setup-smartparens.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -202,7 +203,9 @@
     ("9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" "7f1263c969f04a8e58f9441f4ba4d7fb1302243355cb9faecb55aec878a06ee9" "1157a4055504672be1df1232bed784ba575c60ab44d8e6c7b3800ae76b42f8bd" "cf08ae4c26cacce2eebff39d129ea0a21c9d7bf70ea9b945588c1c66392578d1" "5ee12d8250b0952deefc88814cf0672327d7ee70b16344372db9460e9a0e3ffc" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" default)))
  '(package-selected-packages
    (quote
-    (neotree tagedit smex rainbow-delimiters projectile paredit magit ido-ubiquitous exec-path-from-shell clojure-mode-extra-font-locking cider))))
+                                        (neotree tagedit smex rainbow-delimiters projectile paredit magit ido-ubiquitous exec-path-from-shell clojure-mode-extra-font-locking cider)
+    )))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -233,3 +236,5 @@
 (setq avy-keys '(?a ?r ?s ?t ?d ?h ?n ?e ?i ?o))
 
 (yas-global-mode 1)
+
+(rg-enable-default-bindings (kbd "C-M-s"))
