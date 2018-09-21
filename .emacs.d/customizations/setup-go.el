@@ -20,10 +20,13 @@
 (add-hook 'go-mode-hook 'go-eldoc-setup)
 
 ;; flycheck syntax checker
-(flycheck-gometalinter-setup)
-(setq flycheck-gometalinter-fast t)
-(setq flycheck-gometalinter-test t)
+;(flycheck-gometalinter-setup)
+;(setq flycheck-gometalinter-fast t)
+;(setq flycheck-gometalinter-test t)
+
+
 (add-hook 'go-mode-hook 'flycheck-mode)
+(add-hook 'go-mode-hook 'flycheck-golangci-lint-setup)
 ;(add-hook 'go-mode-hook 'enable-paredit-mode)
 ;(add-hook 'go-mode-hook 'smartparens-mode)
 ;(add-hook 'go-mode-hook 'gorepl-mode)
