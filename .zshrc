@@ -6,8 +6,8 @@ export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themesy
+ZSH_THEME="kolo"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -93,7 +93,7 @@ alias ho='cd $HOME'
 alias hi='history|grep $1'
 alias pe='ps -ef|grep $1'
 
-export GOPATH=/home/lach/go
+export GOPATH=/Users/lhespe/go
 PATH=$PATH:/usr/local/go/bin:~/bin:$GOPATH/bin
 
 export SOUS=$GOPATH/src/github.com/opentable/sous
@@ -109,3 +109,5 @@ alias emacs='emacsclient -c $1'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+export DOCKER_HOST=10.10.21.155
