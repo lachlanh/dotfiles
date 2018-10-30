@@ -11,3 +11,4 @@ rsync -a ~/.vim/rc/ ./.vim/rc
 rsync -a ~/.vim/autoload/ ./.vim/autoload
 rsync -a ~/.emacs.d/customizations/ ./.emacs.d/customizations
 rsync -a ~/.config/i3/ ./.config/i3
+rsync -a ~/.config/alacritty/ ./.config/alacritty
