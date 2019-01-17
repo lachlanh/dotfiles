@@ -190,6 +190,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 # set tap to click for t460s
 exec xinput set-prop 12 282 1
 
+exec xrandr --dpi 150
+
 client.focused #1040C2 #285577 #ffffff #2e9ef4   #285577
 
 exec compton --config ~/.compton.conf
