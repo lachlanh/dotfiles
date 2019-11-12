@@ -169,12 +169,23 @@ bindsym $mod+Shift+Escape exec i3lock && systemctl suspend
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+
+#monitor config
+set $monitor_main DP-0
+set $monitor_tall HDMI-0
+
+workspace 1 output $monitor_tall
+workspace 2 output $monitor_main
+
+
+
+
 #emacsclient window
 bindsym $mod+Shift+e exec emacsclient -c -n
 
 bindsym $mod+space exec "~/kbswitch.sh"
 
-exec nm-applet
+
 
 # Pulse Audio controls 'pactl list sinks' to find the sinks
 #d30
@@ -188,9 +199,14 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # set tap to click for t460s
-exec xinput set-prop 12 282 1
+#exec xinput set-prop 12 282 1
 
+# start pieces
 exec xrandr --dpi 150
+exec nm-applet
+exec redshift-gtk
+exec "~/.screenlayout/coredp.sh"
+
 
 client.focused #1040C2 #285577 #ffffff #2e9ef4   #285577
 

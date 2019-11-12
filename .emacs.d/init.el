@@ -26,6 +26,7 @@
 ;; This informs Emacs about the latest versions of all packages, and
 ;; makes them available for download.
 (when (not package-archive-contents)
+
   (package-refresh-contents))
 
 ;; Start the server if it isn't running
