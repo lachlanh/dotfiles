@@ -2,12 +2,13 @@
 ;;
 ;; aims :
 ;;  lightweight, modular - different language configs that are switchable, understood packages
+(add-to-list 'load-path "~/.emacs.d/config")
 
-(load "~/.emacs.d/packages")
-(load "~/.emacs.d/ui")
-(load "~/.emacs.d/navigation")
-(load "~/.emacs.d/editing")
-(load "~/.emacs.d/programming")
+(load "packages")
+(load "ui")
+(load "navigation")
+(load "editing")
+(load "programming")
 
 ;; (add-to-list 'load-path "~/.emacs.d/better-defaults")
 ;; (require 'better-defaults)
