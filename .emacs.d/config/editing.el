@@ -58,3 +58,10 @@ With negative N, comment out original line and use the absolute value."
   (save-some-buffers t))
 
 (add-hook 'focus-out-hook 'save-all)
+
+;; don't create lock files
+(setq create-lockfiles nil)
+
+;; store all backup and autosave files in the tmp dir
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
