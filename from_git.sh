@@ -4,6 +4,7 @@ cp .zshrc ~/.zshrc
 cp .bash_profile ~/.bash_profile
 cp .gitconfig ~/.gitconfig
 cp .profile ~/.profile
+cp .xsession ~/.xsession
 cp .compton.conf ~/.compton.conf
 #use -anv for dry run
 #rsync -a ./.vim/rc/ ~/.vim/rc
