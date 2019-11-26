@@ -87,17 +87,14 @@ source $ZSH/oh-my-zsh.sh
 alias ll='ls -alF'
 alias lt='ls -lrt'
 
-export WORK=$HOME/dev/ot/
+export WORK=$HOME/src
 alias work='cd $WORK'
 alias ho='cd $HOME'
 alias hi='history|grep $1'
 alias pe='ps -ef|grep $1'
 
-export GOPATH=/home/lach/go
+export GOPATH=$WORK/go
 PATH=$PATH:/usr/local/go/bin:~/bin:$GOPATH/bin
-
-export SOUS=$GOPATH/src/github.com/opentable/sous
-alias works='cd $SOUS'
 
 
 export ALTERNATE_EDITOR=""
