@@ -54,6 +54,8 @@ DISABLE_AUTO_TITLE="true"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+source <(kubectl completion zsh)
+
 
 # User configuration
 
@@ -87,8 +89,11 @@ source $ZSH/oh-my-zsh.sh
 alias ll='ls -alF'
 alias lt='ls -lrt'
 
+
 export WORK=$HOME/src
 alias work='cd $WORK'
+export GS=$WORK/gs
+alias gsw='cd $GS'
 alias ho='cd $HOME'
 alias hi='history|grep $1'
 alias pe='ps -ef|grep $1'
@@ -107,3 +112,5 @@ alias emacs='emacsclient -c $1'
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+source ~/.gs_envrc

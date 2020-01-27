@@ -9,5 +9,6 @@ cp ~/.xsession ./.xsession
 cp ~/.compton.conf ./.compton.conf
 #use -anv for dry run
 rsync -a ~/.emacs.d/config/ ./.emacs.d/config
+rsync -a ~/.emacs.d/themes/ ./.emacs.d/themes
 rsync -a ~/.config/i3/ ./.config/i3
 rsync -a ~/.config/alacritty/ ./.config/alacritty
