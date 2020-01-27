@@ -1,4 +1,16 @@
 ;; Navigation config
+(defvar nav-packages
+  '(
+    ;;navigation
+    ivy
+    counsel
+
+    neotree
+    ))
+
+(load-packages nav-packages)
+
+
 
 ;; ivy config
 (require 'ivy)
@@ -25,5 +37,9 @@
 
 ;; switch off for the moment
 ;; projectile everywhere!
-(projectile-global-mode)
+;; (projectile-global-mode)
+(require 'projectile)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(projectile-mode +1)
+
+(global-set-key [f6] 'neotree-toggle)

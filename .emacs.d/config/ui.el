@@ -20,10 +20,27 @@
 ;; setup the mouse for tmux
 (xterm-mouse-mode 1)
 
-(load-theme 'wombat t)
+
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(add-to-list 'load-path "~/.emacs.d/themes")
+(defvar zenburn-override-colors-alist
+  '(("zenburn-bg" . "#111111")))
+
+(load-theme 'zenburn t)
+
+(zenburn-with-color-variables
+  (custom-theme-set-faces
+   'zenburn
+   `(linum ((t (:foreground ,zenburn-bg+2 :background ,zenburn-bg))))))
+
+;;(load-theme 'tsdh-dark t)
 
 ;; increase font size for better readability
 ;; (set-face-attribute 'default nil :height 140)
 
 ;;switch off startup message
  (setq inhibit-startup-message t)
+
+;; set the font size
+(set-face-attribute 'default nil :height 140)
+

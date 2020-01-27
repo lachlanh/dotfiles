@@ -15,7 +15,6 @@
     counsel
 
     ;;general
-    org
     magit
     projectile
     ))
