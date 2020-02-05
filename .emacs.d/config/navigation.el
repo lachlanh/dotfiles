@@ -4,7 +4,8 @@
     ;;navigation
     ivy
     counsel
-
+    smex
+    ace-window
     neotree
     ))
 
@@ -43,3 +44,15 @@
 (projectile-mode +1)
 
 (global-set-key [f6] 'neotree-toggle)
+
+;; bind ace window
+(global-set-key (kbd "M-o") 'ace-window)
+
+;; Enhances M-x to allow easier execution of commands. Provides
+;; a filterable list of possible commands in the minibuffer
+;; http://www.emacswiki.org/emacs/Smex
+(setq smex-save-file (concat user-emacs-directory ".smex-items"))
+(smex-initialize)
+;;(global-set-key (kbd "M-x") 'smex)
+
+
