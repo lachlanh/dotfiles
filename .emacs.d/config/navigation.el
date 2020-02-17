@@ -7,6 +7,7 @@
     smex
     ace-window
     neotree
+    popwin
     ))
 
 (load-packages nav-packages)
@@ -24,6 +25,7 @@
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 (global-set-key (kbd "<f6>") 'ivy-resume)
 (global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "M-y") 'counsel-yank-pop)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "<f1> f") 'counsel-describe-function)
 (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
@@ -35,6 +37,9 @@
 (global-set-key (kbd "C-c k") 'counsel-rg)
 (global-set-key (kbd "C-x l") 'counsel-locate)
 (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
+(global-set-key (kbd "C-c v") 'ivy-push-view)
+(global-set-key (kbd "C-c V") 'ivy-pop-view)
+
 
 ;; switch off for the moment
 ;; projectile everywhere!
@@ -54,5 +59,7 @@
 (setq smex-save-file (concat user-emacs-directory ".smex-items"))
 (smex-initialize)
 ;;(global-set-key (kbd "M-x") 'smex)
+
+(popwin-mode 1)
 
 

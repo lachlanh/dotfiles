@@ -10,6 +10,7 @@
     yasnippet
     yasnippet-snippets
     ivy-yasnippet
+    flycheck
     ))
 
 
