@@ -6,6 +6,7 @@ cp ~/.gitconfig ./.gitconfig
 cp ~/.emacs.d/init.el ./.emacs.d/init.el
 cp ~/.profile ./.profile
 cp ~/.xsession ./.xsession
+cp ~/.Xresources ./.Xresources
 cp ~/.compton.conf ./.compton.conf
 #use -anv for dry run
 rsync -a ~/.emacs.d/config/ ./.emacs.d/config
