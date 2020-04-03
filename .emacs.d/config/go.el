@@ -9,6 +9,7 @@
     golint
     company-go
     smartparens
+    go-guru
     ))
 
 (load-packages go-packages)
