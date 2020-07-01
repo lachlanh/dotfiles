@@ -172,9 +172,12 @@ bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 
 #monitor config
+#nvidia
 set $monitor_main DP-0
 set $monitor_tall HDMI-0
-
+#nv
+#set $monitor_main DP-1
+#set $monitor_tall HDMI-2
 
 workspace 1 output $monitor_main
 workspace 2 output $monitor_main
@@ -216,4 +219,4 @@ exec "~/.screenlayout/coredp-right.sh"
 
 client.focused #1040C2 #285577 #ffffff #2e9ef4   #285577
 
-exec compton --config ~/.compton.conf
+#exec compton --config ~/.compton.conf

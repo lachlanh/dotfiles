@@ -24,6 +24,9 @@ set $menu dmenupath | i3-dmenu-desktop | xargs swaymsg exec --
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+
+output HDMI-A-2 resolution 2160x3840 position 3840,0 
+
 #
 # Example configuration:
 #
