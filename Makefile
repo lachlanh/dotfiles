@@ -21,3 +21,8 @@ install-go: clean-go
 install-fzf:
 	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 	~/.fzf/install
+
+install-emacs:
+	rsync -a ./.config/systemd/ ~/.config/systemd
+	systemctl --user enable emacs.service
+	systemctl --user start emacs.service

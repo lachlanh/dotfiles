@@ -16,3 +16,4 @@ rsync -a ~/.config/i3/ ./.config/i3
 rsync -a ~/.config/alacritty/ ./.config/alacritty
 rsync -a ~/.config/sway/ ./.config/sway
 rsync -a ~/.config/fish/ ./.config/fish
+rsync -a ~/.config/systemd/ ./.config/systemd
