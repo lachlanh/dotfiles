@@ -23,6 +23,7 @@ fi
 
 export WORK=$HOME/src
 export GOPATH=$WORK/go
-PATH=$PATH:/usr/local/go/bin:~/bin:$GOPATH/bin
+export FZFPATH=$HOME/.fzf/bin
+export PATH=$PATH:/usr/local/go/bin:~/bin:$GOPATH/bin:$FZFPATH
 
 
