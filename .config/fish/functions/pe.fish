@@ -1,3 +1,3 @@
 function pe
-         ps -ef|grep $argv
+         ps -ef|grep -v grep|grep $argv
 end

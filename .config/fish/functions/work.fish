@@ -1,3 +1,3 @@
 function work
-         cd $WORK/rfb
+         cd $WORK
 end
