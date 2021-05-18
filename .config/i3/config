@@ -218,6 +218,7 @@ exec nm-applet
 exec redshift-gtk
 exec "~/.screenlayout/coredp-right.sh"
 exec "~/.screenlayout/coredp-right-nv.sh"
+exec xset r rate 200 30
 
 
 client.focused #1040C2 #285577 #ffffff #2e9ef4   #285577
