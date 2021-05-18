@@ -10,6 +10,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+#set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -173,11 +174,11 @@ bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 #monitor config
 #nvidia
-set $monitor_main DP-0
-set $monitor_tall HDMI-0
+#set $monitor_main DP-0
+#set $monitor_tall HDMI-0
 #nv
-#set $monitor_main DP-1
-#set $monitor_tall HDMI-2
+set $monitor_main DP-1
+set $monitor_tall HDMI-2
 
 workspace 1 output $monitor_main
 workspace 2 output $monitor_main
@@ -186,6 +187,7 @@ workspace 4 output $monitor_main
 workspace 5 output $monitor_main
 workspace 6 output $monitor_tall
 workspace 7 output $monitor_tall
+workspace 8 output $monitor_tall
 
 
 
@@ -194,7 +196,7 @@ bindsym $mod+Shift+e exec emacsclient -c -n
 
 bindsym $mod+space exec "~/kbswitch.sh"
 
-
+bindsym $mod+Shift+s exec gnome-screenshot -i
 
 # Pulse Audio controls 'pactl list sinks' to find the sinks
 #d30
@@ -203,9 +205,9 @@ bindsym $mod+space exec "~/kbswitch.sh"
 #bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 
 #t460s
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
 
 # set tap to click for t460s
 #exec xinput set-prop 12 282 1
@@ -215,6 +217,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 exec nm-applet
 exec redshift-gtk
 exec "~/.screenlayout/coredp-right.sh"
+exec "~/.screenlayout/coredp-right-nv.sh"
 
 
 client.focused #1040C2 #285577 #ffffff #2e9ef4   #285577
@@ -223,3 +226,5 @@ client.focused #1040C2 #285577 #ffffff #2e9ef4   #285577
 exec --no-startup-id xfce4-power-manager
 
 #exec compton --config ~/.compton.conf
+# lighter compton to help with tearing
+exec picom --backend glx --unredir-if-possible --vsync

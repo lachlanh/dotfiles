@@ -238,4 +238,10 @@ bar {
     }
 }
 
+output DP-1 scale 2
+output HDMI-A-2 scale 2
+output HDMI-A-2 transform 90
+output DP-1 0 0
+output HDMI-A-2 pos 1920 0
+
 include /etc/sway/config.d/*

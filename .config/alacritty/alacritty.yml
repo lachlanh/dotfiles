@@ -86,6 +86,7 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
+    family: DejaVu Sans Mono
     family: monospace
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -103,7 +104,7 @@ font:
     #style: Italic
 
   # Point size
-  size: 11.0
+  size: 12.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -221,7 +222,7 @@ colors:
 #   - Linear
 #
 # Specifying a `duration` of `0` will disable the visual bell.
-bell:
+visual_bell:
   animation: EaseOutExpo
   duration: 0
 
@@ -279,7 +280,7 @@ selection:
   # clipboard.
   save_to_clipboard: false
 
-window.dynamic_title: true
+dynamic_title: true
 
 #hide_cursor_when_typing: false
 
