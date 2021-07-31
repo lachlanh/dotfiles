@@ -11,7 +11,7 @@ set -Ux EDITOR emacsclient -t
 set PATH /usr/local/go/bin $PATH
 set PATH $GOPATH/bin $PATH
 set PATH $FZFPATH $PATH
-set PATH /home/lach/.npm-global/bin $PATH
+# set PATH /home/lach/.npm-global/bin $PATH
 
-
+source $WORK/wefarm.fish
 

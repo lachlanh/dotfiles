@@ -221,7 +221,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 # start pieces
 #exec xrandr --dpi 150
 exec nm-applet
-exec redshift-gtk
+#exec redshift-gtk
 #exec "~/.screenlayout/coredp-right.sh"
 #exec "~/.screenlayout/coredp-right-nv.sh"
 
@@ -234,4 +234,7 @@ exec --no-startup-id xfce4-power-manager
 #exec compton --config ~/.compton.conf
 # lighter compton to help with tearing
 #exec compton --backend glx --unredir-if-possible --vsync opengl-swc
-#exec picom --backend glx --unredir-if-possible --vsync
+exec picom --backend glx --unredir-if-possible --vsync
+
+#experiment with zoom windows
+for_window [class="zoom"] floating enable

@@ -21,9 +21,9 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-export WORK=$HOME/src
-export GOPATH=$WORK/go
-export FZFPATH=$HOME/.fzf/bin
-export PATH=$PATH:/usr/local/go/bin:~/bin:$GOPATH/bin:$FZFPATH
+# export WORK=$HOME/src
+# export GOPATH=$WORK/go
+# export FZFPATH=$HOME/.fzf/bin
+# export PATH=$PATH:/usr/local/go/bin:~/bin:$GOPATH/bin:$FZFPATH
 
 
