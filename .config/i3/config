@@ -173,11 +173,12 @@ bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 #monitor config
 #nvidia
-set $monitor_main DP-0
-set $monitor_tall HDMI-0
-#nv
-#set $monitor_main DP-1
-#set $monitor_tall HDMI-2
+#set $monitor_main DP-0
+#set $monitor_tall HDMI-0
+#radeon
+#set $monitor_main DisplayPort-1
+set $monitor_main DisplayPort-0
+set $monitor_tall eDP
 
 workspace 1 output $monitor_main
 workspace 2 output $monitor_main
@@ -186,7 +187,11 @@ workspace 4 output $monitor_main
 workspace 5 output $monitor_main
 workspace 6 output $monitor_tall
 workspace 7 output $monitor_tall
+workspace 8 output $monitor_tall
+workspace 9 output $monitor_tall
 
+bindsym $mod+Mod1+1 exec "~/.screenlayout/lachmbp15-work.sh"
+bindsym $mod+Mod1+2 exec "~/.screenlayout/lachmbp15-work-single.sh"
 
 
 #emacsclient window
@@ -194,6 +199,9 @@ bindsym $mod+Shift+e exec emacsclient -c -n
 
 bindsym $mod+space exec "~/kbswitch.sh"
 
+bindsym $mod+Shift+s exec gnome-screenshot -i
+
+bindsym $mod+Shift+b exec qutebrowser-profile
 
 
 # Pulse Audio controls 'pactl list sinks' to find the sinks
@@ -214,7 +222,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 #exec xrandr --dpi 150
 exec nm-applet
 exec redshift-gtk
-exec "~/.screenlayout/coredp-right.sh"
+#exec "~/.screenlayout/coredp-right.sh"
+#exec "~/.screenlayout/coredp-right-nv.sh"
 
 
 client.focused #1040C2 #285577 #ffffff #2e9ef4   #285577
@@ -223,3 +232,6 @@ client.focused #1040C2 #285577 #ffffff #2e9ef4   #285577
 exec --no-startup-id xfce4-power-manager
 
 #exec compton --config ~/.compton.conf
+# lighter compton to help with tearing
+#exec compton --backend glx --unredir-if-possible --vsync opengl-swc
+#exec picom --backend glx --unredir-if-possible --vsync
