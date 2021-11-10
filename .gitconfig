@@ -1,5 +1,5 @@
 [user]
 	name = lachlanh
 	email = lachlan@hesp.es
-[url "git@github.com:"]
-	insteadOf = https://github.com/
+#[url "git@github.com:"]
+#	insteadOf = https://github.com/

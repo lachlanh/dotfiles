@@ -177,7 +177,8 @@ bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 #set $monitor_tall HDMI-0
 #radeon
 #set $monitor_main DisplayPort-1
-set $monitor_main DisplayPort-0
+#set $monitor_main DisplayPort-0
+set $monitor_main HDMI-0
 set $monitor_tall eDP
 
 workspace 1 output $monitor_main
@@ -215,8 +216,8 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #i
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
-# set tap to click for t460s
-#exec xinput set-prop 12 282 1
+# set tap to click for mbp15 xinput list, xinput list-props
+exec xinput set-prop 11 283 1
 
 # start pieces
 #exec xrandr --dpi 150
@@ -224,7 +225,7 @@ exec nm-applet
 #exec redshift-gtk
 #exec "~/.screenlayout/coredp-right.sh"
 #exec "~/.screenlayout/coredp-right-nv.sh"
-
+exec xset r rate 200 30
 
 client.focused #1040C2 #285577 #ffffff #2e9ef4   #285577
 
@@ -235,6 +236,9 @@ exec --no-startup-id xfce4-power-manager
 # lighter compton to help with tearing
 #exec compton --backend glx --unredir-if-possible --vsync opengl-swc
 exec picom --backend glx --unredir-if-possible --vsync
+
+#kmonad experiment
+exec kmonad ~/.config/kmonad/config.kbd
 
 #experiment with zoom windows
 for_window [class="zoom"] floating enable
