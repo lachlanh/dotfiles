@@ -5,6 +5,9 @@ set -x WORK ~/src/wfm
 set -x GOPATH $WORK/go
 set -x FZFPATH ~/.fzf/bin
 
+# only on clear linux ?
+set -x JAVA_HOME /usr/lib/jvm/java-1.13.0-openjdk
+
 
 set -Ux EDITOR emacsclient -t
 # update the path
