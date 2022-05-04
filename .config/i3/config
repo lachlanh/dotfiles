@@ -214,11 +214,12 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 
 # start pieces
 #exec xrandr --dpi 150
-exec nm-applet
-exec redshift-gtk
-exec "~/.screenlayout/coredp-right.sh"
-exec "~/.screenlayout/coredp-right-nv.sh"
-exec xset r rate 200 30
+exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
+#exec redshift-gtk
+#exec "~/.screenlayout/coredp-right.sh"
+#exec "~/.screenlayout/coredp-right-nv.sh"
+exec --no-startup-id xset r rate 200 30
 
 
 client.focused #1040C2 #285577 #ffffff #2e9ef4   #285577
@@ -226,6 +227,20 @@ client.focused #1040C2 #285577 #ffffff #2e9ef4   #285577
 # power management sleep after 15 minutes
 exec --no-startup-id xfce4-power-manager
 
+# gnome auth
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
 #exec compton --config ~/.compton.conf
 # lighter compton to help with tearing
-exec picom --backend glx --unredir-if-possible --vsync
+# exec picom --backend glx --unredir-if-possible --vsync
+exec --no-startup-id picom
+
+# use xprop to figure out the window name
+for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
+for_window [class="Blueman-manager" instance="blueman-manager"] floating enable
+for_window [class="zoom " instance="zoom "] floating enable
+
+assign [class="zoom " instance="zoom "] 4
+assign [class="Pavucontrol" instance="pavucontrol"] 4
+assign [class="Blueman-manager" instance="blueman-manager"] 4
+
