@@ -6,7 +6,7 @@ set -x WORK ~/src/wfm
 set -x FZFPATH ~/.fzf/bin
 
 
-set -Ux EDITOR emacsclient -t
+set -x EDITOR emacsclient -t
 # update the path
 # go bits
 # set -x GOPATH $WORK/go

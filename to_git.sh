@@ -18,3 +18,4 @@ rsync -a ~/.config/i3status/ ./.config/i3status
 rsync -a ~/.config/sway/ ./.config/sway
 rsync -a ~/.config/fish/ ./.config/fish
 rsync -a ~/.config/systemd/ ./.config/systemd
+rsync -a ~/.config/qutebrowser/ ./.config/qutebrowser
