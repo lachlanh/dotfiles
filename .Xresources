@@ -1,1 +1,15 @@
 Xft.dpi: 168
+! Adjusting the font
+xterm*faceName: Monospace
+xterm*faceSize: 12
+
+! Changing foreground/background color
+xterm*background: #000000
+xterm*foreground: #FFFFFF
+
+! Adding a scroll-bar on the right side
+xterm*scrollBar: false
+! xterm*rightScrollBar:true
+
+! prevent jumping back to the last line with new output
+xterm*scrollTtyOutput: false⏎⏎
