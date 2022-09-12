@@ -1,7 +1,7 @@
 # use rg in fzf
 set -gx FZF_DEFAULT_COMMAND  'rg --files --no-ignore-vcs --hidden'
 
-set -x WORK ~/src/wfm
+set -x WORK ~/src/doc
 set -x GOPATH $WORK/go
 set -x FZFPATH ~/.fzf/bin
 
@@ -13,5 +13,5 @@ set PATH $GOPATH/bin $PATH
 set PATH $FZFPATH $PATH
 # set PATH /home/lach/.npm-global/bin $PATH
 
-source $WORK/wefarm.fish
+#source $WORK/wefarm.fish
 
