@@ -5,8 +5,7 @@ set -x WORK ~/src/doc
 set -x GOPATH $WORK/go
 set -x FZFPATH ~/.fzf/bin
 
-# only on clear linux ?
-set -x JAVA_HOME /usr/lib/jvm/java-1.13.0-openjdk
+set -x JAVA_HOME /opt/homebrew/opt/java
 
 
 set -Ux EDITOR emacsclient -t
@@ -16,4 +15,10 @@ set -Ux EDITOR emacsclient -t
 # set PATH $FZFPATH $PATH
 # set PATH /home/lach/.npm-global/bin $PATH
 
-#source $WORK/wefarm.fish
+fish_add_path $FZFPATH
+fish_add_path /opt/homebrew/bin
+fish_add_path /opt/homebrew/sbin
+fish_add_path /opt/homebrew/opt/openjdk/bin
+fish_add_path /opt/homebrew/opt/node@16/bin
+
+source $WORK/doccla.fish
