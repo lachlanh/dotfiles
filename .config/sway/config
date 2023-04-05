@@ -64,6 +64,8 @@ output HDMI-A-2 resolution 2160x3840 position 3840,0
 input type:keyboard {
       xkb_layout us
 #      xkb_variant colemak
+      repeat_delay 200
+      repeat_rate 30
 }
 
 input type:touchpad {
@@ -238,10 +240,10 @@ bar {
     }
 }
 
-output DP-1 scale 2
-output HDMI-A-2 scale 2
+output DP-1 scale 1.5
+output HDMI-A-2 scale 1.5
 output HDMI-A-2 transform 90
-output DP-1 0 0
+#output DP-1 0 0
 output HDMI-A-2 pos 1920 0
 
 include /etc/sway/config.d/*
