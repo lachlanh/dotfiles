@@ -19,9 +19,18 @@ set $mod Mod4
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:DejaVu Sans Mono 8
+#font pango:monospace 8
 
 # Disable title bar
-new_window pixel 3
+# new_window pixel 3
+
+for_window [class="^.*"] border pixel 2
+
+#default_border pixel 1
+#default_floating_border pixel 1
+#hide_edge_borders both
+
+
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -222,7 +231,7 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id xset r rate 200 30
 
 #exec --not-startup-id ~/.screenlayout/work-double.sh
-exec --not-startup-id xrandr --output DP-1 --primary --mode 3840x2160 --pos 0x0 --rotate normal --output HDMI-1 --off --output HDMI-2 --mode 1920x1080 --pos 3840x1080 --rotate normal --output DP-2 --off --output HDMI-3 --off
+#exec --not-startup-id xrandr --output DP-1 --primary --mode 3840x2160 --pos 0x0 --rotate normal --output HDMI-1 --off --output HDMI-2 --mode 1920x1080 --pos 3840x1080 --rotate normal --output DP-2 --off --output HDMI-3 --off
 
 
 client.focused #1040C2 #285577 #ffffff #2e9ef4   #285577
@@ -235,8 +244,8 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 #exec compton --config ~/.compton.conf
 # lighter compton to help with tearing
-# exec picom --backend glx --unredir-if-possible --vsync
-exec --no-startup-id picom
+exec picom --backend glx  --vsync --config /dev/null
+#exec --no-startup-id picom
 
 # use xprop to figure out the window name
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
