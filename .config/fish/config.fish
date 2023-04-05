@@ -1,7 +1,7 @@
 # use rg in fzf
 set -gx FZF_DEFAULT_COMMAND  'rg --files --no-ignore-vcs --hidden'
 
-set -x WORK ~/src/wfm
+set -x WORK ~/src/doc
 
 set -x FZFPATH ~/.fzf/bin
 
@@ -20,4 +20,7 @@ set PATH $FZFPATH $PATH
 set PATH $HOME/bin $PATH
 
 # work
-source $WORK/wefarm.fish
+#source $WORK/wefarm.fish
+
+# random sway bits
+set -x MOZ_ENABLE_WAYLAND 1
