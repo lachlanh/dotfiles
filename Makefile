@@ -52,4 +52,4 @@ backup-tar:
 		--exclude=Public \
 		--exclude=Templates \
 		--exclude="VirtualBox VMs" \
-		--warning=no-file-changed ~/.
+		--warning=no-file-changed /home/lach/.
