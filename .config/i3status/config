@@ -9,7 +9,7 @@ general {
 #order += "run_watch VPNC"
 #order += "path_exists VPN"
 order += "wireless wlan0"
-order += "ethernet enp4s0"
+order += "ethernet enp0s31f6"
 #order += "battery 0"
 order += "cpu_temperature 0"
 order += "disk /"
@@ -23,7 +23,7 @@ wireless wlan0 {
         format_down = "W: down"
 }
 
-ethernet enp4s0 {
+ethernet enp0s31f6 {
         format_up = "E: %ip (%speed)"
         format_down = "E: down"
 }
@@ -69,8 +69,8 @@ load {
 
 cpu_temperature 0 {
         format = "T: %degrees °C"
-        #path = "/sys/class/thermal/thermal_zone0/temp"
-        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input"
+        path = "/sys/class/thermal/thermal_zone0/temp"
+        #path = "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input"
         #path = "/sys/devices/platform/coretemp.0/temp1_input"
 }
 

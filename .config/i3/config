@@ -186,8 +186,9 @@ bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 #set $monitor_main DP-0
 #set $monitor_tall HDMI-0
 #nv
-set $monitor_main DP-1
-set $monitor_tall HDMI-2
+set $monitor_main HDMI-2
+set $monitor_tall DP-1
+
 
 workspace 1 output $monitor_main
 workspace 2 output $monitor_main
@@ -230,7 +231,7 @@ exec --no-startup-id blueman-applet
 #exec "~/.screenlayout/coredp-right-nv.sh"
 exec --no-startup-id xset r rate 200 30
 
-#exec --not-startup-id ~/.screenlayout/work-double.sh
+exec --not-startup-id ~/.screenlayout/work-double.sh
 #exec --not-startup-id xrandr --output DP-1 --primary --mode 3840x2160 --pos 0x0 --rotate normal --output HDMI-1 --off --output HDMI-2 --mode 1920x1080 --pos 3840x1080 --rotate normal --output DP-2 --off --output HDMI-3 --off
 
 
@@ -244,15 +245,13 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 #exec compton --config ~/.compton.conf
 # lighter compton to help with tearing
-exec picom --backend glx  --vsync --config /dev/null
+#exec picom --backend glx  --vsync --config /dev/null
 #exec --no-startup-id picom
 
 # use xprop to figure out the window name
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
 for_window [class="Blueman-manager" instance="blueman-manager"] floating enable
-for_window [class="zoom " instance="zoom "] floating enable
 
-assign [class="zoom " instance="zoom "] 4
 assign [class="Pavucontrol" instance="pavucontrol"] 4
 assign [class="Blueman-manager" instance="blueman-manager"] 4
 
