@@ -1,1 +1,27 @@
-Xft.dpi: 144
+Xft.dpi: 168
+
+! Adjusting the font
+xterm*faceName: Monospace
+xterm*faceSize: 12
+
+! Changing foreground/background color
+xterm*background: #000000
+xterm*foreground: #FFFFFF
+
+! Adding a scroll-bar on the right side
+xterm*scrollBar: false
+! xterm*rightScrollBar:true
+
+! prevent jumping back to the last line with new output
+xterm*scrollTtyOutput: false⏎⏎
+
+xterm.vt100.metaSendsEscape: true
+xterm.vt100.backarrowKey: false
+xterm.ttyModes: erase ^?
+
+xterm*selectToClipboard: true
+
+XTerm.vt100.translations: #override
+    <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
+    Ctrl Shift <Key>C: copy-selection(CLIPBOARD)
+    Ctrl Shift <Key>V: insert-selection(CLIPBOARD)

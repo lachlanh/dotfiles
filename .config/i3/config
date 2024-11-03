@@ -163,31 +163,43 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+#monitor config
+#nvidia
+#set $monitor_main DP-0
+#set $monitor_tall HDMI-0
+#amd
+set $monitor_main DisplayPort-1
+set $monitor_tall eDP
+
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        font pango:monospace 10
-        status_command i3status
+    output primary
+    font pango:monospace 10
+    status_command i3status
+}
+
+bar {
+        # font pango:monospace 10
+        # status_command i3status
+        output $monitor_main
+        mode hide
+        hidden_state hide
+        modifier $mod
 }
 
 # lock screen
 #bindsym $mod+Escape exec i3lock -d -c 000000
 bindsym $mod+Escape exec i3lock -d -c 454545 -i  ~/Downloads/Tsunami_by_hokusai_19th_century.jpg
-
+# replace i3lock with xflock4
 bindsym $mod+Shift+Escape exec i3lock && systemctl suspend
-bindsym control+Shift+Escape exec i3lock && systemctl suspend
+bindsym control+Shift+Escape exec xflock4 && systemctl suspend
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 
-#monitor config
-#nvidia
-#set $monitor_main DP-0
-#set $monitor_tall HDMI-0
-#nv
-set $monitor_main HDMI-2
-set $monitor_tall DP-1
 
 
 workspace 1 output $monitor_main
@@ -229,7 +241,7 @@ exec --no-startup-id blueman-applet
 #exec redshift-gtk
 #exec "~/.screenlayout/coredp-right.sh"
 #exec "~/.screenlayout/coredp-right-nv.sh"
-exec --no-startup-id xset r rate 200 30
+#exec --no-startup-id xset r rate 200 30
 
 exec --not-startup-id ~/.screenlayout/work-double.sh
 #exec --not-startup-id xrandr --output DP-1 --primary --mode 3840x2160 --pos 0x0 --rotate normal --output HDMI-1 --off --output HDMI-2 --mode 1920x1080 --pos 3840x1080 --rotate normal --output DP-2 --off --output HDMI-3 --off
@@ -249,9 +261,9 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #exec --no-startup-id picom
 
 # use xprop to figure out the window name
-for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
+for_window [class="pavucontrol" instance="pavucontrol"] floating enable
 for_window [class="Blueman-manager" instance="blueman-manager"] floating enable
 
-assign [class="Pavucontrol" instance="pavucontrol"] 4
+assign [class="pavucontrol" instance="pavucontrol"] 4
 assign [class="Blueman-manager" instance="blueman-manager"] 4
 
