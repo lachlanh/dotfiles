@@ -10,10 +10,10 @@ general {
 #order += "path_exists VPN"
 order += "volume master"
 order += "wireless wlan0"
-order += "ethernet enp0s31f6"
-order += "battery 0"
+order += "ethernet enp5s0"
+#order += "battery 0"
 order += "cpu_temperature 0"
-#order += "disk /"
+order += "disk /"
 order += "memory"
 order += "load"
 order += "tztime local"
@@ -25,7 +25,7 @@ wireless wlan0 {
         format_down = "W:no"
 }
 
-ethernet enp0s31f6 {
+ethernet enp5s0 {
         format_up = "E: %ip (%speed)"
         format_down = "E:no"
 }

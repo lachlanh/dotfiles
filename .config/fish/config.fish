@@ -1,7 +1,7 @@
 # use rg in fzf
 set -gx FZF_DEFAULT_COMMAND  'rg --files --no-ignore-vcs --hidden'
 
-set -x WORK ~/src/ocean
+set -x WORK ~/src/ml
 
 set -x FZFPATH ~/.fzf/bin
 
@@ -19,6 +19,9 @@ fish_add_path -g -p $FZFPATH
 fish_add_path -g -p $HOME/bin
 fish_add_path -g -p $HOME/bin/flutter/bin
 
+# python bits
+fish_add_path -g -p $HOME/.local/bin
+
 # android bits
 # set -x ANDROID_HOME ~/Android/Sdk
 
@@ -32,7 +35,7 @@ fish_add_path -g -p $HOME/.pub-cache/bin
 #set PATH $HOME/bin $PATH
 
 # work
-source $WORK/ob.fish
+# source $WORK/ob.fish
 
 # random sway bits
 #set -x MOZ_ENABLE_WAYLAND 1
