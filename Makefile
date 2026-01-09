@@ -44,15 +44,26 @@ backup-tar:
 		--exclude=.gradle \
 		--exclude=.local/share/gvfs-metadata \
 		--exclude=.local/share/Trash \
+		--exclude=.local/share/gnome-boxes \
+		--exclude=.local/share/torbrowser \
+		--exclude=.local/share/lapce-stable \
 		--exclude=.recently-used \
 		--exclude=.thumbnails \
 		--exclude=.xsession-errors \
 		--exclude=.Trash \
 		--exclude=Trash \
 		--exclude=backup \
-		--exclude=Downloads \
 		--exclude=Public \
 		--exclude=Templates \
 		--exclude="VirtualBox VMs" \
 		--exclude=node_modules \
+		--exclude=.config/libvirt \
+		--exclude=.config/google-chrome \
+		--exclude=.config/chromium \
+		--exclude=".config/Code - Oss" \
+		--exclude=.platformio \
+		--exclude=.m2 \
+		--exclude=src/archive \
 		--warning=no-file-changed /home/lach/.
+
+# 		--exclude=Downloads \

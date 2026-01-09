@@ -19,18 +19,9 @@ set $mod Mod4
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:DejaVu Sans Mono 8
-#font pango:monospace 8
 
 # Disable title bar
-# new_window pixel 3
-
-for_window [class="^.*"] border pixel 2
-
-#default_border pixel 1
-#default_floating_border pixel 1
-#hide_edge_borders both
-
-
+new_window pixel 3
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -194,13 +185,23 @@ bar {
 bindsym $mod+Escape exec i3lock -d -c 454545 -i  ~/Downloads/Tsunami_by_hokusai_19th_century.jpg
 # replace i3lock with xflock4
 bindsym $mod+Shift+Escape exec i3lock && systemctl suspend
-bindsym control+Shift+Escape exec xflock4 && systemctl suspend
+
+#bindsym control+Shift+Escape exec xflock4 && systemctl suspend
+bindsym control+Shift+Escape exec i3lock && systemctl hibernate
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-
-
+#monitor config
+#nvidia
+#set $monitor_main DP-0
+#set $monitor_tall HDMI-0
+#nv
+#set $monitor_main DP-1
+#set $monitor_tall HDMI-2
+#intel
+set $monitor_main HDMI-2
+set $monitor_tall DP-1
 
 workspace 1 output $monitor_main
 workspace 2 output $monitor_main
@@ -210,8 +211,16 @@ workspace 5 output $monitor_main
 workspace 6 output $monitor_tall
 workspace 7 output $monitor_tall
 workspace 8 output $monitor_tall
-workspace 9 output $monitor_tall
-workspace 0 output $monitor_tall
+
+# 
+# assign [class="Alacritty"] 1
+# assign [class="Emacs"] 2
+# assign [class="zoom"] 4
+assign [class="pavucontrol"] 4
+assign [class="blueman-manager"] 4
+# assign [class="Google-chrome"] 6
+# assign [class="qutebrowser"] 6
+
 
 #emacsclient window
 bindsym $mod+Shift+e exec emacsclient -c -n
@@ -236,24 +245,24 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 
 # start pieces
 #exec xrandr --dpi 150
-exec --no-startup-id nm-applet
-exec --no-startup-id blueman-applet
+exec nm-applet
+exec blueman-applet
 #exec redshift-gtk
-#exec "~/.screenlayout/coredp-right.sh"
+#exec "/home/lach/.screenlayout/coredp-right.sh"
 #exec "~/.screenlayout/coredp-right-nv.sh"
-#exec --no-startup-id xset r rate 200 30
 
+#exec --no-startup-id xset r rate 200 30
 exec --not-startup-id ~/.screenlayout/work-double.sh
 #exec --not-startup-id xrandr --output DP-1 --primary --mode 3840x2160 --pos 0x0 --rotate normal --output HDMI-1 --off --output HDMI-2 --mode 1920x1080 --pos 3840x1080 --rotate normal --output DP-2 --off --output HDMI-3 --off
 
+# This should help with the tearing
+exec --no-startup-id nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 {ForceCompositionPipeline=On}"
 
 client.focused #1040C2 #285577 #ffffff #2e9ef4   #285577
 
 # power management sleep after 15 minutes
-exec --no-startup-id xfce4-power-manager
-
-# gnome auth
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+# 20210915 - switch off power management so reboots are ok. wol
+# exec --no-startup-id xfce4-power-manager
 
 #exec compton --config ~/.compton.conf
 # lighter compton to help with tearing
@@ -267,3 +276,7 @@ for_window [class="Blueman-manager" instance="blueman-manager"] floating enable
 assign [class="pavucontrol" instance="pavucontrol"] 4
 assign [class="Blueman-manager" instance="blueman-manager"] 4
 
+#experiment with zoom windows
+#for_window [class="zoom"] floating enable
+for_window [class="pavucontrol"] floating enable
+for_window [class="blueman-manager"] floating enable
