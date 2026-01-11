@@ -1,27 +1,71 @@
 Xft.dpi: 168
 
-! Adjusting the font
 xterm*faceName: Monospace
 xterm*faceSize: 12
 
-! Changing foreground/background color
-xterm*background: #000000
-xterm*foreground: #FFFFFF
+Xcursor.theme: Adwaita
 
-! Adding a scroll-bar on the right side
-xterm*scrollBar: false
-! xterm*rightScrollBar:true
+xterm.vt100.termName: xterm-256color
 
-! prevent jumping back to the last line with new output
-xterm*scrollTtyOutput: false⏎⏎
+xterm.vt100.bellIsUrgent: true
 
 xterm.vt100.metaSendsEscape: true
+xterm*altSendsEscape: true
+xterm*eightBitInput: false
 xterm.vt100.backarrowKey: false
 xterm.ttyModes: erase ^?
 
+! copy and paste related
+xterm*disallowedWindowOps: 20,21,SetXprop
 xterm*selectToClipboard: true
 
-XTerm.vt100.translations: #override
+xterm.vt100.translations: #override
     <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
     Ctrl Shift <Key>C: copy-selection(CLIPBOARD)
     Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
+
+! 1. FONT SETTINGS
+! Turn on antialiasing for that smooth Alacritty look
+xterm*renderFont:              true
+
+! ----------------------------------------------------------------------
+! Alacritty Default (Tomorrow Night Bright) - Xterm Configuration
+! ----------------------------------------------------------------------
+
+! Background and Foreground
+xterm*background:              #1d1f21
+xterm*foreground:              #c5c8c6
+xterm*cursorColor:             #c5c8c6
+
+! Black / Bright Black
+! Note: Alacritty uses the background color for normal black
+xterm*color0:                  #1d1f21
+xterm*color8:                  #666666
+
+! Red / Bright Red
+xterm*color1:                  #cc6666
+xterm*color9:                  #cc6666
+
+! Green / Bright Green
+xterm*color2:                  #b5bd68
+xterm*color10:                 #b5bd68
+
+! Yellow / Bright Yellow
+xterm*color3:                  #f0c674
+xterm*color11:                 #f0c674
+
+! Blue / Bright Blue
+xterm*color4:                  #81a2be
+xterm*color12:                 #81a2be
+
+! Magenta / Bright Magenta
+xterm*color5:                  #b294bb
+xterm*color13:                 #b294bb
+
+! Cyan / Bright Cyan
+xterm*color6:                  #8abeb7
+xterm*color14:                 #8abeb7
+
+! White / Bright White
+xterm*color7:                  #c5c8c6
+xterm*color15:                 #ffffff

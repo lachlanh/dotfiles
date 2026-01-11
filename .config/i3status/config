@@ -19,10 +19,9 @@ order += "load"
 order += "tztime local"
 #order += "tztime berlin"
 
-wireless wlan0 {
-        #format_up = "W:%quality %bitrate %ip"
+wireless wlp0s20f3 {
         format_up = "W:%quality %ip"
-        format_down = "W:no"
+        format_down = "W: down"
 }
 
 ethernet enp5s0 {

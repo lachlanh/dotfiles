@@ -2,3 +2,5 @@
 .vim/.netrwhist
 .emacs.d/elpa/
 .emacs.d/session*
+.config/fish/functions/_pure*
+.config/fish/conf.d
