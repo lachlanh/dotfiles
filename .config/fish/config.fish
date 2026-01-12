@@ -17,7 +17,7 @@ set -x EDITOR emacsclient -t
 
 fish_add_path -g -p $FZFPATH
 fish_add_path -g -p $HOME/bin
-fish_add_path -g -p $HOME/bin/flutter/bin
+
 
 # python bits
 fish_add_path -g -p $HOME/.local/bin
@@ -29,13 +29,9 @@ fish_add_path -g -p $HOME/.local/bin
 # fish_add_path -g -p $ANDROID_HOME/platform-tools
 
 #flutterfire
-fish_add_path -g -p $HOME/.pub-cache/bin
-
-#set PATH $FZFPATH $PATH
-#set PATH $HOME/bin $PATH
+#fish_add_path -g -p $HOME/.pub-cache/bin
+#fish_add_path -g -p $HOME/bin/flutter/bin
 
 # work
 # source $WORK/ob.fish
 
-# random sway bits
-#set -x MOZ_ENABLE_WAYLAND 1
